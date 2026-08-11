@@ -1,3 +1,20 @@
+# MiraHRM Backend
+
+MiraHRM is a fork of [Frappe HR (`frappe/hrms`)](https://github.com/frappe/hrms) customized for the
+**Tanzanian** payroll, statutory-compliance, and HR environment.
+
+This repository is the **backend** half of MiraHRM — the Frappe app (Python: doctypes, controllers,
+payroll engine, REST/RPC API) plus the bench/docker tooling used to run it. The companion Vue/Ionic
+frontend apps live in a separate repo: [`uswegem/MiraHRM-Frontend`](https://github.com/uswegem/MiraHRM-Frontend).
+
+See [`docs/TANZANIA_CUSTOMIZATION.md`](docs/TANZANIA_CUSTOMIZATION.md) for what's been localized so far
+(PAYE tax bands, NSSF/PSSSF, WCF, SDL, NHIF, TIN fields, staff-loan payroll deductions) and what's still
+upstream/TODO, and [`docs/SETUP.md`](docs/SETUP.md) for how to stand up a bench site.
+
+Everything below this line is the original upstream Frappe HR README, kept for reference.
+
+---
+
 <div align="center">
 	<a href="https://frappe.io/hr">
 		<img src=".github/frappe-hr-logo.png" height="80px" width="80px" alt="Frappe HR Logo">
