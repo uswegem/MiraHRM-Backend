@@ -1,0 +1,90 @@
+[
+	{
+		"doctype": "Salary Component",
+		"salary_component": "NSSF Employee Contribution",
+		"description": "National Social Security Fund - employee share",
+		"type": "Deduction",
+		"is_tax_applicable": 1,
+		"amount_based_on_formula": 1,
+		"formula": "gross_pay * 0.10",
+		"round_to_the_nearest_integer": 1
+	},
+	{
+		"doctype": "Salary Component",
+		"salary_component": "NSSF Employer Contribution",
+		"description": "National Social Security Fund - employer share (statistical, not paid to employee)",
+		"type": "Deduction",
+		"statistical_component": 1,
+		"do_not_include_in_total": 1,
+		"amount_based_on_formula": 1,
+		"formula": "gross_pay * 0.10",
+		"round_to_the_nearest_integer": 1
+	},
+	{
+		"doctype": "Salary Component",
+		"salary_component": "PSSSF Employee Contribution",
+		"description": "Public Service Social Security Fund - employee share (public sector, alternative to NSSF)",
+		"type": "Deduction",
+		"is_tax_applicable": 1,
+		"disabled": 1,
+		"amount_based_on_formula": 1,
+		"formula": "gross_pay * 0.10",
+		"round_to_the_nearest_integer": 1
+	},
+	{
+		"doctype": "Salary Component",
+		"salary_component": "PSSSF Employer Contribution",
+		"description": "Public Service Social Security Fund - employer share (statistical, not paid to employee)",
+		"type": "Deduction",
+		"statistical_component": 1,
+		"do_not_include_in_total": 1,
+		"disabled": 1,
+		"amount_based_on_formula": 1,
+		"formula": "gross_pay * 0.10",
+		"round_to_the_nearest_integer": 1
+	},
+	{
+		"doctype": "Salary Component",
+		"salary_component": "WCF",
+		"description": "Workers Compensation Fund contribution - employer only, statistical",
+		"type": "Deduction",
+		"statistical_component": 1,
+		"do_not_include_in_total": 1,
+		"amount_based_on_formula": 1,
+		"formula": "gross_pay * 0.006",
+		"round_to_the_nearest_integer": 1
+	},
+	{
+		"doctype": "Salary Component",
+		"salary_component": "SDL",
+		"description": "Skills and Development Levy - employer only, statistical (applies to employers with 4+ employees)",
+		"type": "Deduction",
+		"statistical_component": 1,
+		"do_not_include_in_total": 1,
+		"amount_based_on_formula": 1,
+		"formula": "gross_pay * 0.035",
+		"round_to_the_nearest_integer": 1
+	},
+	{
+		"doctype": "Salary Component",
+		"salary_component": "NHIF Employee Contribution",
+		"description": "National Health Insurance Fund - employee share",
+		"type": "Deduction",
+		"disabled": 1,
+		"amount_based_on_formula": 1,
+		"formula": "gross_pay * 0.03",
+		"round_to_the_nearest_integer": 1
+	},
+	{
+		"doctype": "Salary Component",
+		"salary_component": "NHIF Employer Contribution",
+		"description": "National Health Insurance Fund - employer share (statistical, not paid to employee)",
+		"type": "Deduction",
+		"statistical_component": 1,
+		"do_not_include_in_total": 1,
+		"disabled": 1,
+		"amount_based_on_formula": 1,
+		"formula": "gross_pay * 0.03",
+		"round_to_the_nearest_integer": 1
+	}
+]
