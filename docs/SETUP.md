@@ -11,10 +11,15 @@ ERPNext for `Company`, `Account`, etc.). It is run via `bench`, same as upstream
 # docker/ folder in this repo for a containerized setup.
 
 pip install frappe-bench
-bench init mirahrm-bench --frappe-branch version-15
+# IMPORTANT: this fork's hrms/ content was pulled from frappe/hrms's `develop` branch (the
+# bleeding-edge line), not a pinned `version-*` release. hrms's own
+# hrms/patches/v15_0/check_version_compatibility_with_frappe.py warns explicitly about pairing
+# a develop-based hrms with a mismatched frappe/erpnext version - use `develop` for all three
+# apps below to stay compatible.
+bench init mirahrm-bench --frappe-branch develop
 cd mirahrm-bench
 
-bench get-app erpnext --branch version-15
+bench get-app erpnext --branch develop
 bench get-app hrms https://github.com/uswegem/MiraHRM-Backend.git --branch main
 
 bench new-site mirahrm.local
