@@ -1,9 +1,9 @@
-# MiraHRM Backend
+# MiraHRMS Backend
 
-MiraHRM is a fork of [Frappe HR (`frappe/hrms`)](https://github.com/frappe/hrms) customized for the
+MiraHRMS is a fork of [Frappe HR (`frappe/hrms`)](https://github.com/frappe/hrms) customized for the
 **Tanzanian** payroll, statutory-compliance, and HR environment.
 
-This repository is the **backend** half of MiraHRM — the Frappe app (Python: doctypes, controllers,
+This repository is the **backend** half of MiraHRMS — the Frappe app (Python: doctypes, controllers,
 payroll engine, REST/RPC API) plus the bench/docker tooling used to run it. The companion Vue/Ionic
 frontend apps live in a separate repo: [`uswegem/MiraHRM-Frontend`](https://github.com/uswegem/MiraHRM-Frontend).
 

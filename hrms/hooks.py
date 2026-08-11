@@ -1,11 +1,17 @@
+# NOTE: app_name is the technical Python package/module name and is left as "hrms" -
+# it is referenced by ~200 files' imports, hooks below, asset URLs, and bench itself.
+# Renaming it is a separate, much larger mechanical refactor - see docs/TANZANIA_CUSTOMIZATION.md.
+# Only the display branding below (app_title etc.) has been changed to MiraHRMS.
 app_name = "hrms"
-app_title = "Frappe HR"
-app_publisher = "Frappe Technologies Pvt. Ltd."
-app_description = "Modern HR and Payroll Software"
-app_email = "contact@frappe.io"
+app_title = "MiraHRMS"
+app_publisher = "MiraHRMS Contributors"
+app_description = "Modern HR and Payroll Software, customized for Tanzania"
+app_email = "support@mirahrms.example"  # TODO: replace with a real support address
 app_license = "GNU General Public License (v3)"
 required_apps = ["frappe/erpnext"]
-source_link = "http://github.com/frappe/hrms"
+source_link = "https://github.com/uswegem/MiraHRM-Backend"
+# TODO: app_logo_url still points at the upstream Frappe HR logo asset (hrms/public/images/) -
+# replace that svg file with MiraHRMS branding and this path can stay the same.
 app_logo_url = "/assets/hrms/images/frappe-hr-logo.svg"
 app_home = "/desk/hr-setup"
 
@@ -13,7 +19,7 @@ add_to_apps_screen = [
 	{
 		"name": "hrms",
 		"logo": "/assets/hrms/images/frappe-hr-logo.svg",
-		"title": "Frappe HR",
+		"title": "MiraHRMS",
 		"route": app_home,
 		"has_permission": "hrms.hr.utils.check_app_permission",
 		"sequence_id": 2,

@@ -1,6 +1,6 @@
 # Setup
 
-MiraHRM Backend is a normal Frappe app on top of the Frappe Framework + ERPNext (HRMS depends on
+MiraHRMS Backend is a normal Frappe app on top of the Frappe Framework + ERPNext (HRMS depends on
 ERPNext for `Company`, `Account`, etc.). It is run via `bench`, same as upstream `frappe/hrms`.
 
 ## Local development (bench)

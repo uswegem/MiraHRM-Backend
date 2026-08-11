@@ -1,6 +1,6 @@
 # Tanzania Customization
 
-MiraHRM Backend is `frappe/hrms` (Frappe HR) forked at commit `450f6ca` with a `hrms/regional/tanzania/`
+MiraHRMS Backend is `frappe/hrms` (Frappe HR) forked at commit `450f6ca` with a `hrms/regional/tanzania/`
 module added, following the exact same extension pattern the upstream project already uses for India
 and the UAE (`hrms/regional/india`, `hrms/regional/united_arab_emirates`).
 

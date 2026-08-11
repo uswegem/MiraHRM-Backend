@@ -1,4 +1,4 @@
-# Copyright (c) 2026, MiraHRM Contributors
+# Copyright (c) 2026, MiraHRMS Contributors
 # License: GNU General Public License v3. See license.txt
 #
 # Regional module for Tanzania. Auto-discovered by hrms.overrides.company.run_regional_setup()
