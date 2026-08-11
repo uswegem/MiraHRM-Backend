@@ -26,6 +26,7 @@ which for a fresh site normally happens once, right after the Setup Wizard.
 | GL posting on payroll approval | ✅ Already core HRMS, needs account mapping | `Payroll Entry` → `Journal Entry`, via `Salary Component Account` (map each component to a GL account per company — not seeded here since it's Chart-of-Accounts specific) |
 | Leave balances & requests | ✅ Already core HRMS | `Leave Application`, `Leave Allocation`, `Leave Type` |
 | Staff loan deductions in payroll | ✅ Already core HRMS | `Loan` + `Loan Repayment`, auto-pulled into `Salary Slip` (see `hrms/setup.py::create_salary_slip_loan_fields`) |
+| Swahili translation | 🟡 Started (~14% of app-specific strings) | `hrms/locale/sw.po` — see [Swahili translation](#swahili-translation) below |
 
 ## ⚠️ Verify the rates before going to production
 
@@ -46,14 +47,37 @@ Before running real payroll, confirm each rate against the current Finance Act /
 update the `Income Tax Slab` slabs or the relevant `Salary Component`'s `formula` field to match —
 no code change needed, these are just data.
 
+## Swahili translation
+
+`hrms/locale/sw.po` is a gettext PO file, generated from `hrms/locale/main.pot` (the app's own
+extracted-string template) with a curated glossary applied on top. It currently covers **319 of 2,248**
+app-specific strings (~14%) — the highest-visibility ones: doctype names, field labels, and buttons
+across Payroll, Leave, Attendance, Recruitment, and Performance. Untranslated entries are left with an
+empty `msgstr`, which is the normal partial-translation state — Frappe falls back to English for those,
+nothing breaks.
+
+Two things worth knowing:
+- **Generic desk chrome isn't in this file.** Strings like "Save", "Submit", "Employee" (as a bare
+  word), date-range pickers, etc. are translated once in the `frappe` framework app itself, not
+  per-app. Full desk-level Swahili needs contributions upstream to `frappe/frappe`'s own locale files
+  — out of scope for this repo.
+- **To add more:** open `hrms/locale/sw.po` and fill in any empty `msgstr ""` line, or regenerate with
+  `bench --site <site> get-untranslated sw untranslated.csv` / `bench --site <site> update-translations`
+  against a running site for the exact live string list, or extend the `GLOSSARY` dict and rerun the
+  generator script that produced this file (kept in this repo's git history / ask for it again).
+- After editing, `bench --site <site> clear-cache` picks up changes; users set their language to
+  Swahili in User settings or the site's default language.
+
 ## What's still TODO
 
 - **Chart of Accounts**: no Tanzania-specific CoA template is included. Map each statutory Salary
   Component (NSSF Employee/Employer, WCF, SDL, NHIF, Income Tax) to a payable GL account per company
   via `Salary Component Account`, so `Payroll Entry` posts correctly.
 - **Mobile money payout** (M-Pesa, Tigo Pesa, Airtel Money) for salary disbursement — not started.
-- **Swahili translation** of the UI — not started; Frappe's translation framework (`locale/`) supports
-  it, just needs `sw` strings contributed.
+- **Swahili translation**: only ~14% of app-specific strings done (see above) — needs the remaining
+  ~1,900 strings (mostly longer help text and error messages) reviewed and translated, ideally by a
+  native speaker familiar with Tanzanian HR/payroll terminology, plus upstream `frappe/frappe` desk
+  strings for full UI coverage.
 - **NBC/CRDB/NMB bank file formats** for bulk salary payment exports — not started.
 - **Zanzibar-specific** payroll/statutory differences (ZSSF instead of NSSF, different PAYE
   administration in some cases) — not modeled; only Mainland Tanzania rates are seeded.
