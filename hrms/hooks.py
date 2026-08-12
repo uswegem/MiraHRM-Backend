@@ -10,15 +10,13 @@ app_email = "support@mirahrms.example"  # TODO: replace with a real support addr
 app_license = "GNU General Public License (v3)"
 required_apps = ["frappe/erpnext"]
 source_link = "https://github.com/uswegem/MiraHRM-Backend"
-# TODO: app_logo_url still points at the upstream Frappe HR logo asset (hrms/public/images/) -
-# replace that svg file with MiraHRMS branding and this path can stay the same.
-app_logo_url = "/assets/hrms/images/frappe-hr-logo.svg"
+app_logo_url = "/assets/hrms/images/unique-solutions-logo.png"
 app_home = "/desk/hr-setup"
 
 add_to_apps_screen = [
 	{
 		"name": "hrms",
-		"logo": "/assets/hrms/images/frappe-hr-logo.svg",
+		"logo": "/assets/hrms/images/unique-solutions-logo.png",
 		"title": "MiraHRMS",
 		"route": app_home,
 		"has_permission": "hrms.hr.utils.check_app_permission",
